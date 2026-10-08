@@ -1,0 +1,84 @@
+:global(:root) {
+	--surface-radius: 1rem;
+}
+
+:global(.surface-panel) {
+	background: var(--bg-primary);
+	border: 1px solid var(--border-color);
+	border-radius: var(--surface-radius);
+	padding: 1rem;
+	box-shadow: 0 12px 26px var(--shadow);
+}
+
+:global(.surface-panel--muted) {
+	background: var(--bg-secondary);
+}
+
+:global(.surface-panel--interactive) {
+	transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+	cursor: pointer;
+}
+
+:global(.surface-panel--interactive:hover) {
+	transform: translateY(-2px);
+	box-shadow: 0 16px 34px var(--shadow-hover);
+	border-color: var(--border-hover);
+}
+
+:global(.input-control) {
+	width: 100%;
+	padding: 0.75rem 0.85rem;
+	border-radius: 0.9rem;
+	border: 1px solid var(--border-color);
+	background: var(--bg-secondary);
+	color: var(--text-primary);
+	font-size: 0.95rem;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+:global(.input-control:focus) {
+	outline: none;
+	border-color: var(--link-color);
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+:global(.input-control::placeholder) {
+	color: var(--text-tertiary);
+}
+
+:global(.input-control.is-textarea) {
+	resize: vertical;
+	min-height: 120px;
+}
+
+:global(.input-control[disabled]) {
+	opacity: 0.7;
+	cursor: not-allowed;
+}
+
+:global(.stack) {
+	display: flex;
+	flex-direction: column;
+	gap: var(--stack-gap, 1rem);
+}
+
+:global(.flex-between) {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+:global(.badge) {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	padding: 0.2rem 0.75rem;
+	border-radius: 999px;
+	border: 1px solid var(--border-color);
+	font-size: 0.75rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--text-secondary);
+}
